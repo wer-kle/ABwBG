@@ -267,16 +267,16 @@ rm(a)  # Usuwa obiekt 'a'
 getwd()
 
 # Ustawienie katalogu roboczego
-# setwd("C:/Nowy/Katalog")
+setwd("C:/Nowy/Katalog")
 
 # Pomoc dla funkcji
-# help(mean) lub ?mean
+help(mean) lub ?mean
 
 # Wyszukiwanie w dokumentacji
-# help.search("regression")
+help.search("regression")
 
 # Przykłady użycia funkcji
-# example(mean)
+example(mean)
 
 # Pomiar czasu wykonania kodu
 czas <- system.time({
