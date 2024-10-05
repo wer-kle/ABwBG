@@ -69,11 +69,11 @@ Po ukończeniu przedmiotu student będzie potrafił:
   - "R Programming for Bioinformatics" – Gentleman R.
   - "An Introduction to R" - Douglas A., et al.
   - "Primer to Analysis of Genomic Data Using R" - Gondro C.
-  - materiały przygotowywane przez prowadzących
+  - "Computational Genomics with R" - Akalin A. <https://compgenomr.github.io/book>
 
 - **Uzupełniająca:**
 
-  - artykuły naukowe udostępniane przez prowadzącego
+  - artykuły naukowe udostępniane przez prowadzących
 
 ## Warunki zaliczenia ćwiczeń
 
@@ -83,7 +83,7 @@ Po ukończeniu przedmiotu student będzie potrafił:
 
 ## Uwagi
 
-- Wszystkie ćwiczenia będą realizowane na komputerach z systemem Windows w środowisku RStudio.
+- Wszystkie ćwiczenia będą realizowane na komputerach z systemem Windows w środowisku RStudio. Jeżeli preferujesz srodowisko Mac/Linux, możesz pracowac na wlasnym laptopie.
 
 - Terminy, godziny zajęć oraz szczegółowa tematyka mogą ulec zmianie – aktualny harmonogram będzie dostępny na MS Teams.
 
