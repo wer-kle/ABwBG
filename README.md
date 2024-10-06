@@ -24,30 +24,45 @@ Po ukończeniu przedmiotu student będzie potrafił:
 
 ## Plan ćwiczeń
 
-**Zajęcia 1-3 (8 października – 22 października, wtorki 10:00-13:00):**
+Oto bardziej szczegółowy plan ćwiczeń z podziałem na konkretne tematy i cele edukacyjne.
+
+## Plan ćwiczeń
+
+### **Zajęcia 1-3 (8 października – 22 października, wtorki 10:00-13:00)**
 
 - **Temat:** Wprowadzenie do R i RStudio.
-- **Zakres:**
-  - Zapoznanie się z językiem R i z IDE RStudio.
-  - Podstawy składni języka R.
-  - Manipulacja danymi i podstawowe wizualizacje.
-  - Praca z użyciem różnych pakietów.
-  - Instalacja i wprowadzenie do BioConductor.
+- **Zakres i cele:**
+  - **Zapoznanie się z R i RStudio**: Omówienie środowiska RStudio (konsola, edytor skryptów, przeglądarka obiektów).
+    - **Ćwiczenie**: Instalacja R i RStudio na komputerach uczestników.
+  - **Podstawy języka R**: Wprowadzenie do składni języka, typów danych (wektory, ramki danych, listy), podstawowych operacji (tworzenie obiektów, operacje arytmetyczne).
+    - **Ćwiczenie**: Proste skrypty do manipulacji danych i wykonywania obliczeń.
+  - **Manipulacja danymi i wizualizacja**: Korzystanie z pakietów `dplyr` i `ggplot2` dla podstawowych operacji na danych (filtrowanie, grupowanie, podsumowywanie) oraz podstawowa wizualizacja danych.
+    - **Ćwiczenie**: Tworzenie i modyfikacja podstawowych wykresów.
+  - **Praca z pakietami i wprowadzenie do BioConductor**: Instalacja pakietów z CRAN oraz BioConductor, przegląd podstawowych pakietów BioConductor.
+    - **Ćwiczenie**: Instalacja i zapoznanie się z dokumentacją kluczowych pakietów BioConductor.
 
-**Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00/14:00-17:00):**
+### **Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00/14:00-17:00)**
+*Uwaga: od 12 listopada zajęcia w sali 1011 (1. piętro)*
 
 - **Temat:** Analiza danych z sekwencjonowania całogenomowego (WGS).
-- **Zakres:**
-  - Preprocessing danych WGS.
-  - Mapowanie sekwencji i detekcja wariantów.
-  - Interpretacja wyników i anotacja genów.
+- **Zakres i cele:**
+  - **Preprocessing danych WGS**: Wprowadzenie do formatów danych WGS (FASTQ, BAM, VCF) oraz wstępnego przetwarzania danych (filtrowanie, kontrola jakości).
+    - **Ćwiczenie**: Korzystanie z pakietu `ShortRead` do analizy jakości surowych danych sekwencjonowania.
+  - **Mapowanie sekwencji i detekcja wariantów**: Omówienie procesu mapowania sekwencji na genom referencyjny, wykrywania wariantów (SNPs, indels) i tworzenia plików VCF.
+    - **Ćwiczenie**: Użycie pakietu `Rsamtools` do przetwarzania i analizy danych BAM oraz `VariantAnnotation` do pracy z plikami VCF.
+  - **Anotacja i interpretacja wariantów**: Omówienie procesów anotacji wariantów i ich interpretacji w kontekście genomu.
+    - **Ćwiczenie**: Korzystanie z pakietu `AnnotationHub` do pobierania danych referencyjnych i `GenomicFeatures` do anotacji genomu.
 
-**Zajęcia 8-11 (26 listopada – 17 grudnia, wtorki 14:00-17:00):**
+### **Zajęcia 8-11 (26 listopada – 17 grudnia, wtorki 14:00-17:00)**
 
 - **Temat:** Zaawansowane techniki analizy WGS i case studies.
-- **Zakres:**
-  - Analiza strukturalnych wariantów genomowych.
-  - Omówienie wybranych badań naukowych.
+- **Zakres i cele:**
+  - **Analiza strukturalnych wariantów genomowych**: Omówienie rodzajów wariantów strukturalnych (np. duplikacje, delecje, translokacje) oraz narzędzi do ich analizy.
+    - **Ćwiczenie**: Praca z pakietem `StructuralVariantAnnotation` do detekcji i analizy wariantów strukturalnych.
+  - **Zaawansowane wizualizacje danych WGS**: Tworzenie złożonych wizualizacji wariantów, struktury genomu i wyników analizy.
+    - **Ćwiczenie**: Użycie pakietów `ggbio` i `circlize` do tworzenia wykresów genomowych.
+  - **Omówienie wybranych badań naukowych**: Przegląd publikacji wykorzystujących analizę WGS, dyskusja nad metodologią, wynikami i wnioskami.
+    - **Ćwiczenie**: Analiza przypadków w grupach, prezentacja wybranych badań i dyskusja nad zastosowaniem poznanych technik analizy.
 
 ## Metody dydaktyczne
 
