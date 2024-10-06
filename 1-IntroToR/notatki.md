@@ -1,7 +1,3 @@
-# Notatki z zajęć
+# Notatki z zajęć 1 - wprowadzenie do R
 
-## Część teoretyczna
 
-## Zajęcia praktyczne
-
-## Dodatkowe informacje
