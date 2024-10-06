@@ -1,1 +1,7 @@
-# Miejsce dla studenta na zapisywanie własnych notatek, spostrzeżeń, myśli
+# Notatki z zajęć
+
+## Część teoretyczna
+
+## Zajęcia praktyczne
+
+## Dodatkowe informacje
