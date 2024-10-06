@@ -5,8 +5,9 @@
 **Przedmiot:** Analizy bioinformatyczne w badaniach genomowych\
 **Forma zajęć:** Ćwiczenia (33 godziny)\
 **Prowadzący:** Weronika Klecel | [weronika\_klecel@sggw.edu.pl](mailto\:weronika_klecel@sggw.edu.pl) | pok. 25\
-**Sala:** 14 (do 5 listopada), 1011 (od 12 listopada).\
-**Terminy zajęć:** Wtorki w godzinach 10:00-13:00, a od 19 listopada w godzinach 14:00-17:00.
+**Sala:** 14 (do 5 listopada), 1011 (od 12 listopada) \
+**Terminy zajęć:** Wtorki w godzinach 10:00-13:00, a od 19 listopada w godzinach 14:00-17:00 \
+**Konsultacje:** Do indywidualnego ustalenia 
 
 ## Opis przedmiotu
 
@@ -21,18 +22,16 @@ Po ukończeniu przedmiotu student będzie potrafił:
 - Dokonywać wizualizacji wyników analiz WGS.
 - Interpretować wyniki analiz bioinformatycznych w kontekście badań genomowych.
 
-## Plan zajęć
-
-### Ćwiczenia (33 godziny)
+## Plan ćwiczeń
 
 **Zajęcia 1-3 (8 października – 22 października, wtorki 10:00-13:00):**
 
 - **Temat:** Wprowadzenie do R i RStudio.
 - **Zakres:**
-  - Instalacja i konfiguracja R oraz RStudio.
+  - Zapoznanie się z językiem R i z IDE RStudio.
   - Podstawy składni języka R.
   - Manipulacja danymi i podstawowe wizualizacje.
-  - Praca z użyciem różnych pakietów
+  - Praca z użyciem różnych pakietów.
   - Instalacja i wprowadzenie do BioConductor.
 
 **Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00/14:00-17:00):**
