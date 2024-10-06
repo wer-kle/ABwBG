@@ -1,12 +1,9 @@
 # Analizy bioinformatyczne w badaniach genomowych
 
-# Sylabus
-
-**Przedmiot:** Analizy bioinformatyczne w badaniach genomowych\
 **Forma zajęć:** Ćwiczenia (33 godziny)\
 **Prowadzący:** Weronika Klecel | [weronika\_klecel@sggw.edu.pl](mailto\:weronika_klecel@sggw.edu.pl) | pok. 25\
 **Sala:** 14 (do 5 listopada), 1011 (od 12 listopada) \
-**Terminy zajęć:** Wtorki w godzinach 10:00-13:00, a od 19 listopada w godzinach 14:00-17:00 \
+**Terminy zajęć:** Wtorki w godzinach 10:00-13:00, od 19 listopada w godzinach 14:00-17:00 \
 **Konsultacje:** Do indywidualnego ustalenia 
 
 ## Opis przedmiotu
