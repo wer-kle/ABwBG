@@ -24,10 +24,6 @@ Po ukończeniu przedmiotu student będzie potrafił:
 
 ## Plan ćwiczeń
 
-Oto bardziej szczegółowy plan ćwiczeń z podziałem na konkretne tematy i cele edukacyjne.
-
-## Plan ćwiczeń
-
 ### **Zajęcia 1-3 (8 października – 22 października, wtorki 10:00-13:00)**
 
 - **Temat:** Wprowadzenie do R i RStudio.
