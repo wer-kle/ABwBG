@@ -3,7 +3,7 @@
 **Forma zajęć:** Ćwiczenia (33 godziny)\
 **Prowadzący:** Weronika Klecel | [weronika\_klecel@sggw.edu.pl](mailto\:weronika_klecel@sggw.edu.pl) | pok. 25\
 **Sala:** 14 (do 5 listopada), 1011 (od 12 listopada) \
-**Terminy zajęć:** Wtorki w godzinach 10:00-13:00, od 19 listopada w godzinach 14:00-17:00 \
+**Terminy zajęć:** Wtorki w godzinach 10:00-13:00 \
 **Konsultacje:** Do indywidualnego ustalenia 
 
 ## Opis przedmiotu
@@ -34,7 +34,7 @@ Po ukończeniu przedmiotu student będzie potrafił:
   - **Praca z pakietami i wprowadzenie do BioConductor**: Instalacja pakietów z CRAN oraz BioConductor, przegląd podstawowych pakietów BioConductor.
     - **Ćwiczenie**: Instalacja i zapoznanie się z dokumentacją kluczowych pakietów BioConductor.
 
-### **Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00/14:00-17:00)**
+### **Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00)**
 *Uwaga: od 12 listopada zajęcia w sali 1011 (1. piętro)*
 
 - **Temat:** Analiza danych z sekwencjonowania całogenomowego (WGS).
@@ -46,7 +46,7 @@ Po ukończeniu przedmiotu student będzie potrafił:
   - **Anotacja i interpretacja wariantów**: Omówienie procesów anotacji wariantów i ich interpretacji w kontekście genomu.
     - **Ćwiczenie**: Korzystanie z pakietu `AnnotationHub` do pobierania danych referencyjnych i `GenomicFeatures` do anotacji genomu.
 
-### **Zajęcia 8-11 (26 listopada – 17 grudnia, wtorki 14:00-17:00)**
+### **Zajęcia 8-11 (26 listopada – 17 grudnia, wtorki 10:00-14:00)**
 
 - **Temat:** Zaawansowane techniki analizy WGS i case studies.
 - **Zakres i cele:**
