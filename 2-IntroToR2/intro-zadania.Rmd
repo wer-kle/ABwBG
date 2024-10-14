@@ -1,0 +1,246 @@
+---
+title: "zadania-intro"
+author: "Weronika Klecel"
+date: "2024-10-14"
+output: html_document
+---
+
+---
+title: "zadania-wspolne"
+author: "Weronika Klecel"
+date: "2024-10-08"
+output: html_document
+---
+
+# Zadania do wspólnego rozwiązania
+
+## Zadanie 1: Zapoznanie się z RStudio
+
+**Cel:** Poznanie interfejsu i podstawowych funkcji RStudio.
+
+### Instrukcje i rozwiązanie:
+
+1.  **Uruchom RStudio** na swoim komputerze.
+
+2.  **Zapoznaj się z interfejsem użytkownika:**
+
+3.  **Stwórz nowy skrypt R:**
+
+4.  **W skrypcie napisz komentarze** opisujące funkcje poszczególnych paneli.
+
+5.  **Znajdź w RStudio ustawienia** i **zmień motyw kolorystyczny** na taki, który najbardziej Ci odpowiada.
+
+6.  **Napisz w komentarzu**, jaki motyw wybrałeś/aś i dlaczego.
+
+7.  **Zapisz skrypt** jako `zadanie1.R` w swoim folderze.
+
+8.  **Prześlij plik do swojego repozytorium na GitHub**.
+
+------------------------------------------------------------------------
+
+## Zadanie 2: Instalacja i użycie pakietów
+
+**Cel:** Nauka instalowania i używania pakietów w R
+
+### Instrukcje i rozwiązanie:
+
+1.  **Zainstaluj pakiet `ggplot2`.**
+    
+    ```r
+    install.packages("ggplot2")
+    ```
+    
+2.  **Załaduj pakiet.**
+    
+    ```r
+    library(ggplot2)
+    ```
+    
+3.  **Sprawdź dokumentację pakietu.**
+    
+    ```r
+    ?ggplot2
+    ```
+    
+4.  **Zainstaluj i załaduj** dodatkowy pakiet, który Cię zainteresuje.
+    Listę pakietów w repozytorium CRAN wraz z opisami znajdziesz tutaj: <https://cran.r-project.org/web/packages/available_packages_by_name.html> 
+
+    ```r
+    install.packages("plotly")
+    library(plotly)
+    ```
+    
+5.  **Napisz krótki opis** w komentarzu.
+    
+    ```r
+    # Pakiet 'plotly' służy do tworzenia interaktywnych wykresów.
+    # Zainteresował mnie, ponieważ umożliwia tworzenie dynamicznych wizualizacji danych.
+    ```
+    
+6.  **Zapisz skrypt** jako `zadanie2.R` i prześlij go do swojego repozytorium.
+
+------------------------------------------------------------------------
+
+## Zadanie 3: Tworzenie raportu w RMarkdown
+
+**Cel:** Nauka tworzenia prostego raportu w RMarkdown, integrującego tekst i podstawowe elementy.
+
+### Instrukcje i rozwiązanie:
+
+1.  **W RStudio stwórz nowy plik RMarkdown**.
+    
+    -   **Krok 1:** Kliknij **File** -> **New File** -> **R Markdown...**.
+    -   **Krok 2:** Uzupełnij tytuł, autora i wybierz format **HTML**.
+    
+2.  **Napisz prosty raport**, który zawiera następujące sekcje:
+    
+    -   **Wprowadzenie:** Krótkie wprowadzenie na temat tego, co obejmuje raport.
+    -   **Opis środowiska:** Opisz, jakie pakiety zostały zainstalowane i dlaczego.
+    -   **Przykładowy kod:** Dodaj prosty fragment kodu R (np. wyświetlenie powitania).
+    -   **Wnioski:** Krótkie podsumowanie tego, czego się nauczyłeś/aś.
+    
+3.  **Dodaj przykładowy kod** do raportu.
+    
+    ```r
+    # Przykładowy kod R
+    print("Witaj świecie!")
+    ```
+    
+4.  **Sformatuj tekst** używając nagłówków, pogrubień i list punktowanych, aby raport był czytelny. Wskazówki dotyczące formatowania znajdziesz w pliku `markdown-cheatsheet.md` w repozytorium.
+
+5.  **Wygeneruj raport** w formacie HTML.
+    
+    -   **Krok 1:** Kliknij **Knit** w pasku narzędzi RStudio.
+    
+6.  **Zapisz plik** jako `zadanie3.Rmd` i prześlij go (oraz wygenerowany plik HTML) do swojego repozytorium.
+
+------------------------------------------------------------------------
+
+## Zadanie 4: Tworzenie wykresów za pomocą esquisse
+
+**Cel:** Nauczyć się tworzyć wykresy bez pisania kodu.
+
+### Instrukcje i rozwiązanie:
+
+1.  **Zainstaluj i załaduj pakiet `esquisse`.**
+    
+    ```r
+    install.packages("esquisse")
+    library(esquisse)
+    ```
+    
+2.  **Uruchom interfejs graficzny**.
+    
+    ```r
+    esquisse::esquisser()
+    ```
+    
+3.  **Stwórz wykres** korzystając z interfejsu przeciągnij i upuść.
+    
+    -   **Krok 1:** W oknie `esquisse` wybierz dataset, np. `mtcars`.
+    -   **Krok 2:** Przeciągnij zmienne na osie X i Y oraz wybierz typ wykresu.
+    -   **Krok 3:** Dostosuj wygląd wykresu za pomocą dostępnych opcji.
+    
+4.  **Wyeksportuj wygenerowany kod ggplot2** i wklej go do skryptu.
+    
+    -   **Krok 1:** W interfejsie `esquisse` kliknij na zakładkę **Code**.
+    -   **Krok 2:** Skopiuj kod.
+    
+    ```r
+    ggplot(datasets::iris) +
+  aes(x = Sepal.Length, y = Petal.Length, colour = Species) +
+  geom_point(size = 2.9, shape = "circle small") +
+  scale_color_viridis_d(option = "viridis", direction = 1) +
+  theme_light()
+  ```
+    
+5.  **Użyj własnych danych** do stworzenia wykresu.
+
+6.  **Zapisz skrypt** jako `zadanie4.R`, a wykres jako 'wykres4.pdf' i prześlij go do swojego repozytorium.
+
+------------------------------------------------------------------------
+
+## Zadanie 5: Podsumowanie i dokumentacja
+
+**Cel:** Dokumentacja wykonanej pracy i praktyka z plikami README.
+
+### Instrukcje i rozwiązanie:
+
+1.  **Utwórz plik `README.md`** w folderze `2-IntroToR` w swoim repozytorium.
+    
+    -   **Krok 1:** W swoim repozytorium na GitHub przejdź do folderu `2-IntroToR`.
+    -   **Krok 2:** Kliknij **Add file** -> **Create new file**.
+    -   **Krok 3:** Nazwij plik `README.md`.
+    
+2.  **Opisz krótko każde zadanie**:
+    
+    -   **Zadanie 1:** Zapoznanie się z interfejsem RStudio.
+    -   **Zadanie 2:** Instalacja i użycie pakietów.
+    -   **Zadanie 3:** Tworzenie prostego raportu w RMarkdown.
+    -   **Zadanie 4:** Tworzenie wykresów za pomocą `esquisse`.
+    -   **Zadanie 5:** Podsumowanie i dokumentacja.
+    
+3.  **Dodaj instrukcje** dotyczące instalacji wymaganych pakietów.
+    
+    -   **Przykład:**
+    
+        ```markdown
+        ## Wymagane pakiety
+    
+        - `ggplot2`: `install.packages("ggplot2")`
+        - `plotly`: `install.packages("plotly")`
+        - `esquisse`: `install.packages("esquisse")`
+        ```
+    
+4.  **Dodaj sekcję** z wnioskami i refleksjami na temat nauki R.
+    
+    -   **Przykład:**
+    
+        ```markdown
+        ## Wnioski i refleksje
+    
+        - Nauka R jest ciekawa i otwiera nowe możliwości analizy danych.
+        - Praktyka z różnymi pakietami pokazuje elastyczność języka.
+        - Tworzenie raportów i wykresów jest intuicyjne dzięki narzędziom RStudio.
+        ```
+    
+5.  **Podziel się** napotkanymi trudnościami i sposobami ich rozwiązania.
+    
+    -   **Przykład:**
+    
+        ```markdown
+        ## Napotkane trudności
+    
+        - Problem z instalacją pakietu `esquisse`; rozwiązany przez aktualizację R.
+        - Błędy w kodzie wynikające z literówek; nauczyłem się dokładniej czytać komunikaty błędów.
+        ```
+    
+6.  **Prześlij plik** do swojego repozytorium.
+    
+    -   **Krok 1:** Po zakończeniu edycji pliku na GitHub, przewiń w dół i kliknij **Commit new file**.
+
+------------------------------------------------------------------------
+
+**Uwagi końcowe:**
+
+-   **Regularnie zapisuj swoje zmiany** w swoim repozytorium na GitHub.
+-   **Staraj się pisać czytelny kod**, używaj wcięć i komentarzy.
+-   **Sprawdzaj poprawność kodu** przed przesłaniem.
+-   **Upewnij się, że wszystkie pliki są w odpowiednim folderze** `2-IntroToR` w Twoim repozytorium.
+-   **Jeśli masz pytania** lub napotkasz problemy, skontaktuj się z prowadzącym lub skorzystaj z dostępnych materiałów online.
+
+**Powodzenia w nauce i eksploracji języka R!**
+
+------------------------------------------------------------------------
+
+**Dodatkowe materiały i źródła:**
+
+-   **R Documentation:** <https://www.rdocumentation.org/>
+-   **RStudio Cheat Sheets:** <https://rstudio.com/resources/cheatsheets/>
+-   **Tutoriale online (jest ich mnóstwo - znajdź swój ulubiony!):**
+    -   [swirl - Interactive Learning in R](https://swirlstats.com/)
+    -   [R for Data Science](https://r4ds.had.co.nz/)
+
+**Pamiętaj:** Nauka programowania wymaga praktyki. Im więcej ćwiczysz, tym łatwiej będzie Ci rozwiązywać coraz bardziej skomplikowane problemy.
+
+
