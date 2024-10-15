@@ -1,0 +1,16 @@
+1. Pobierz pakiet bezpośrednio z repozytorium, korzystając z linku z konsoli, np. <https://cran.rstudio.com/bin/windows/contrib/4.3/withr_3.0.1.zip>
+2. Rozpakuj pobrany plik zip
+3.Skopiuj ścieżkę do folderu pakietu, klikając prawym klawiszem w listwie górnej opcję "Kopiuj adres". Skopiowany adres powinien mieć taką strukturę: 'C:\Users\p101620\Downloads\withr_3.0.1.zip\withr'
+4.Użyj komendy:
+```{r}
+install.packages("adres/folderu/z/pakietem", repos = NULL, type = "source")
+```
+Zastap "adres/folderu/z/pakietem" rzeczywistym adresem do folderu, np.:
+```{r}
+install.packages("C:\Users\p101620\Downloads\withr_3.0.1.zip\withr", repos = NULL, type = "source")
+```
+5. Zweryfikuj instalację za pomocą 
+```{r}
+library(nazwa_pakietu)
+```
+
