@@ -5,13 +5,6 @@ date: "2024-10-14"
 output: html_document
 ---
 
----
-title: "zadania-wspolne"
-author: "Weronika Klecel"
-date: "2024-10-08"
-output: html_document
----
-
 # Zadania do wspólnego rozwiązania
 
 ## Zadanie 1: Zapoznanie się z RStudio
