@@ -315,7 +315,7 @@ srednia_grup <- tapply(wartosci, grupy, mean) # Średnie w grupach
 ---
 
 ## 8. Funkcje związane z łańcuchami znaków
-*Dane genomowe zawierają dużo informacji tekstowych, takich jak nazwy genów, identyfikatory sekwencji czy anotacje funkcjonalne. Manipulacja łańcuchami znaków jest ważna przy przetwarzaniu tych informacji, np. ekstrakcja określonych fragmentów tekstu, wyszukiwanie wzorców czy modyfikacja nazw.*
+*Dane genomowe zawierają dużo informacji tekstowych, takich jak nazwy genów, identyfikatory sekwencji czy anotacje funkcjonalne, a często same sekwencje są zapisane jako łańcuchy znaków. Manipulacja łańcuchami znaków jest ważna przy przetwarzaniu informacji, takich jak ekstrakcja określonych fragmentów sekwencji czy wyszukiwanie wzorców*
 
 ### Łączenie tekstu
 
