@@ -69,7 +69,7 @@
 
 1. **Zadanie 1:** Sprawdź, czy liczba 7 jest większa od 5 i jednocześnie mniejsza od 10.
 
-2. **Zadanie 2:** Dla wektora $[-3, 0, 5]$ użyj funkcji `ifelse()`, aby przypisać "Dodatnia", "Zero" lub "Ujemna" do każdego elementu.
+2. **Zadanie 2:** Dla wektora $[-3, 2, 5]$ użyj funkcji `ifelse()`, aby przypisać "Dodatnia" lub "Ujemna" do każdego elementu.
 
 3. **Zadanie 3:** Sprawdź, czy jakikolwiek element wektora $[FALSE, FALSE, TRUE]$ jest prawdziwy.
 
