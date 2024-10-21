@@ -35,7 +35,7 @@
 
 ## Część 3: Operacje na wektorach i indeksowanie
 
-1. **Zadanie 1:** Stwórz wektor zawierający liczby od 0 do 1 z krokiem 0,1.
+1. **Zadanie 1:** Stwórz wektor, który będzie zwracał wszystkie wartości od 0 do 1 co 0,1.
 
 2. **Zadanie 2:** Dla wektora $[2, 4, 6, 8, 10]$ wybierz drugi i czwarty element.
 
