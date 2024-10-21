@@ -67,7 +67,7 @@
 
 ## Część 5: Funkcje logiczne i warunkowe
 
-1. **Zadanie 1:** Sprawdź, czy liczba 7 jest większa od 5 i mniejsza od 10.
+1. **Zadanie 1:** Sprawdź, czy liczba 7 jest większa od 5 i jednocześnie mniejsza od 10.
 
 2. **Zadanie 2:** Dla wektora $[-3, 0, 5]$ użyj funkcji `ifelse()`, aby przypisać "Dodatnia", "Zero" lub "Ujemna" do każdego elementu.
 
