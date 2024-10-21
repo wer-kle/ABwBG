@@ -87,7 +87,7 @@
 
 2. **Zadanie 2:** Użyj pętli `while`, aby obliczyć silnię liczby 5.
 
-3. **Zadanie 3:** Stwórz macierz $2 \times 5$ i za pomocą funkcji `apply()` oblicz sumę elementów w każdym wierszu.
+3. **Zadanie 3:** Stwórz macierz $2 \times 5$ wypełnioną kolumnami i za pomocą funkcji `apply()` oblicz sumę elementów w każdym wierszu.
 
 4. **Zadanie 4:** Użyj funkcji `sapply()` na liście $[1\!:\!3,\; 4\!:\!6,\; 7\!:\!9]$ do obliczenia sumy elementów każdej podlisty.
 
