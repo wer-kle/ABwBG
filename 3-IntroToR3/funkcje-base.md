@@ -291,7 +291,7 @@ srednia_grup <- tapply(wartosci, grupy, mean) # Średnie w grupach
 ### Czytanie danych z pliku
 
 ```r
-# dane <- read.csv("dane.csv", header = TRUE, sep = ",")
+# dane <- read.csv("dane.csv", header = TRUE, sep = ",") #jeżeli nie mamy zdefiniowanego katalogu roboczego, musimy wpisać pełny adres ścieżki do pliku wejściowego
 ```
 
 ### Zapisywanie danych do pliku
