@@ -1,4 +1,5 @@
 # Zadania treningowe z R base
+***Instrukcja:*** **Zapisz rozwiązania zadań z każdej części jako osobny skrypt w formacie .Rmd lub (ewentualnie) .R, np. Czesc1.Rmd, Czesc2.R.**
 
 ## Część 1: Podstawowe operacje matematyczne
 
