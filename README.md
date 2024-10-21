@@ -29,15 +29,11 @@ Po ukończeniu przedmiotu student będzie potrafił:
     - **Ćwiczenie**: Instalacja R i RStudio na komputerach uczestników.
   - **Podstawy języka R**: Wprowadzenie do składni języka, typów danych (wektory, ramki danych, listy), podstawowych operacji (tworzenie obiektów, operacje arytmetyczne).
     - **Ćwiczenie**: Proste skrypty do manipulacji danych i wykonywania obliczeń.
-  - **Manipulacja danymi i wizualizacja**: Korzystanie z pakietów `dplyr` i `ggplot2` dla podstawowych operacji na danych (filtrowanie, grupowanie, podsumowywanie) oraz podstawowa wizualizacja danych.
-    - **Ćwiczenie**: Tworzenie i modyfikacja podstawowych wykresów.
-  - **Praca z pakietami i wprowadzenie do BioConductor**: Instalacja pakietów z CRAN oraz BioConductor, przegląd podstawowych pakietów BioConductor.
-    - **Ćwiczenie**: Instalacja i zapoznanie się z dokumentacją kluczowych pakietów BioConductor.
 
 ### **Zajęcia 4-7 (29 października – 19 listopada, wtorki 10:00-13:00)**
 *Uwaga: od 12 listopada zajęcia w sali 1011 (1. piętro)*
 
-- **Temat:** Analiza danych z sekwencjonowania całogenomowego (WGS).
+- **Temat:** Wprowadzenie do analizy danych WGS.
 - **Zakres i cele:**
   - **Preprocessing danych WGS**: Wprowadzenie do formatów danych WGS (FASTQ, BAM, VCF) oraz wstępnego przetwarzania danych (filtrowanie, kontrola jakości).
     - **Ćwiczenie**: Korzystanie z pakietu `ShortRead` do analizy jakości surowych danych sekwencjonowania.
@@ -92,5 +88,4 @@ Po ukończeniu przedmiotu student będzie potrafił:
 
 - Wszystkie ćwiczenia będą realizowane na komputerach z systemem Windows w środowisku RStudio. Jeżeli preferujesz srodowisko Mac/Linux, możesz pracowac na wlasnym laptopie.
 
-- Terminy, godziny zajęć oraz szczegółowa tematyka mogą ulec zmianie – aktualny harmonogram będzie dostępny na MS Teams.
-
+- Terminy, godziny zajęć oraz szczegółowa tematyka mogą ulec zmianie – aktualny harmonogram będzie aktualizowany na bieżąco.
