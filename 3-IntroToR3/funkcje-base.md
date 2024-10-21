@@ -43,6 +43,7 @@ r <- tan(pi/4)      # Tangens: r = 1
 ---
 
 ## 2. Funkcje statystyczne
+*Analiza danych genomowych często wymaga zastosowania zaawansowanych metod statystycznych do interpretacji wyników eksperymentów wysokoprzepustowych, takich jak sekwencjonowanie DNA czy RNA. Znajomość podstawowych parametrów statystycznych, takich jak średnia, mediana, wariancja czy odchylenie standardowe, jest kluczowa do oceny jakości danych i identyfikacji istotnych biologicznie zmian.*
 
 ### Tworzenie wektora danych
 
@@ -89,6 +90,7 @@ kowariancja <- cov(x, y)  # Kowariancja między x i y
 ---
 
 ## 3. Operacje na wektorach i indeksowanie
+*Dane genomowe są zwykle przechowywane w dużych wektorach, macierzach lub listach. Umiejętność efektywnego indeksowania, filtrowania i manipulacji tymi strukturami danych jest niezbędna do przetwarzania i analizowania dużych zestawów danych genomowych, takich jak ekspresja genów czy warianty genetyczne.*
 
 ### Tworzenie wektorów
 
@@ -123,6 +125,7 @@ rangi <- rank(wektor1)         # Rangi elementów
 ---
 
 ## 4. Praca z ramkami danych (data frames)
+*Ramki danych są podstawową strukturą do przechowywania danych w R, w tym danych genomowych. BioConductor wykorzystuje je do organizacji danych o genach, próbkach, anotacjach i wynikach analiz. Umiejętność manipulacji ramkami danych, dodawania i usuwania kolumn czy wierszy oraz dostępu do poszczególnych elementów jest kluczowa.*
 
 ### Tworzenie ramki danych
 
@@ -165,6 +168,7 @@ dane_ramka$miasto <- NULL            # Usuwanie kolumny 'miasto'
 ---
 
 ## 5. Funkcje logiczne i warunkowe
+*Operacje logiczne i warunkowe są niezbędne do filtrowania danych genomowych np. na podstawie fenotypów.*
 
 ### Operatory logiczne
 
@@ -224,6 +228,7 @@ indeksy_pozytywne <- which(wektor > 0) # Indeksy elementów większych od 0
 ---
 
 ## 6. Pętle i iteracje
+*Chociaż w R preferowane są operacje wektorowe, w analizie danych genomowych często konieczne jest zastosowanie pętli do iteracyjnego przetwarzania danych, szczególnie przy niestandardowych analizach lub gdy funkcje wektorowe nie są dostępne. Znajomość pracy na pętlach jest też bardzo przydatna do pracy w Pythonie.*
 
 ### Pętla for
 
@@ -281,6 +286,7 @@ srednia_grup <- tapply(wartosci, grupy, mean) # Średnie w grupach
 ---
 
 ## 7. Funkcje wejścia/wyjścia
+*Importowanie i eksportowanie danych jest fundamentalne w analizie genomowej. Dane mogą pochodzić z różnych źródeł i mogą być zapisywane w różnych formatach (np. FASTQ, BAM, VCF). Znajomość funkcji do czytania i zapisywania danych pozwala na efektywne zarządzanie plikami i integrację różnych typów danych omicznych.*
 
 ### Czytanie danych z pliku
 
@@ -309,6 +315,7 @@ srednia_grup <- tapply(wartosci, grupy, mean) # Średnie w grupach
 ---
 
 ## 8. Funkcje związane z łańcuchami znaków
+*Dane genomowe zawierają dużo informacji tekstowych, takich jak nazwy genów, identyfikatory sekwencji czy anotacje funkcjonalne. Manipulacja łańcuchami znaków jest ważna przy przetwarzaniu tych informacji, np. ekstrakcja określonych fragmentów tekstu, wyszukiwanie wzorców czy modyfikacja nazw.*
 
 ### Łączenie tekstu
 
@@ -361,6 +368,7 @@ tekst_zmieniony_all <- gsub("kot", "pies", "kot kotek kotka") # "pies piesek pie
 ---
 
 ## 9. Funkcje statystyczne i probabilistyczne
+*Zaawansowane analizy statystyczne są kluczowe w genomice. Obejmują one modelowanie statystyczne, testy istotności, analizy rozkładów czy estymację parametrów. Znajomość tych funkcji pozwala na przeprowadzenie złożonych analiz, takich jak chociażby GWAS.*
 
 ### Rozkład normalny
 
@@ -442,6 +450,7 @@ czas <- system.time({
 ---
 
 ## 11. Tworzenie własnych funkcji
+*Pisanie własnych funkcji umożliwia automatyzację powtarzalnych zadań i tworzenie niestandardowych narzędzi analitycznych dostosowanych do specyficznych potrzeb badawczych. W analizie danych genomowych może to obejmować tworzenie funkcji do specyficznego przetwarzania sekwencji czy agregacji wyników.*
 
 ### Definiowanie funkcji
 
@@ -461,6 +470,7 @@ suma <- dodaj(3, 5)  # suma = 8
 ---
 
 ## 12. Przekształcenia typów danych
+*Dane genomowe mogą występować w różnych formatach i typach. Umiejętność konwersji między typami danych, takimi jak liczby, czynniki (faktory) czy łańcuchy znaków, jest niezbędna do integracji danych z różnych źródeł i przygotowania ich do analizy.*
 
 ### Konwersja na liczby
 
@@ -511,6 +521,7 @@ roznica <- difftime(data2, data1, units = "days")  # Liczba dni między datami
 ---
 
 ## 14. Losowanie i permutacje
+*Permutacje i losowe próbkowanie są często wykorzystywane w analizach genomowych do oceny istotności statystycznej, np. w testach permutacyjnych czy podczas tworzenia rozkładów null w analizach asocjacyjnych.*
 
 ### Losowy wybór elementów
 
