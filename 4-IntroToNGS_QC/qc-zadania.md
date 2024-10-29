@@ -148,7 +148,7 @@
 
 ### **Zadanie 6: Generowanie raportu QC za pomocą Rqc**
 
-**Cel:** Porównać wyniki kontroli jakości uzyskane za pomocą innego pakietu Bioconductora.
+**Cel:** Porównanie wyników kontroli jakości uzyskane za pomocą innego pakietu Bioconductora.
 
 **Polecenia:**
 
@@ -175,7 +175,7 @@
 
 ### **Zadanie 7: Przycinanie odczytów na podstawie jakości**
 
-**Cel:** Nauczyć się przycinać odczyty na podstawie wartości jakości baz.
+**Cel:** Nauka przycinania (trimmingu) odczytów na podstawie wartości jakości baz.
 
 **Polecenia:**
 
