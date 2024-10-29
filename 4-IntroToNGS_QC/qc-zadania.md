@@ -49,9 +49,9 @@
 **Polecenia:**
 
 1. Przejdź na stronę NCBI SRA: [https://www.ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/sra)
-2. Wyszukaj dane sekwencyjne dla **Escherichia coli** z sekwencjonowania całogenomowego (WGS) na platformie Illumina.
-3. Wybierz eksperyment **SRX26518123**.
-4. Pobierz plik FASTQ (np. `SRX26518123.fastq.gz`) bezpośrednio ze strony lub użyj **SRA Toolkit**.
+2. Wyszukaj dane sekwencyjne dla **Escherichia coli** z sekwencjonowania całogenomowego (WGS) na platformie Illumina z dostępnym plikiem w formacie FASTQ.
+3. Wybierz dowolny wyświetlony rekord.
+4. Pobierz plik FASTQ (np. `SRX26518123.fastq.gz`) bezpośrednio ze strony. *Dla chętnych*: użyj [SRA Toolkit](https://github.com/ncbi/sra-tools).
 
 **Zadanie do wykonania:**
 
