@@ -17,7 +17,7 @@
 
 ## 1. Czym jest Bioconductor?
 
-**Bioconductor** to projekt open-source dostarczający zestaw narzędzi programistycznych w języku R, przeznaczonych do analizy i interpretacji danych genomicznych. Oferuje szeroką gamę pakietów dedykowanych różnym typom danych biologicznych, w tym danych z sekwencjonowania nowej generacji (NGS), mikromacierzy, proteomiki i wielu innych.
+[Bioconductor](www.bioconductor.org) to projekt open-source dostarczający zestaw narzędzi programistycznych w języku R, przeznaczonych do analizy i interpretacji danych genomicznych. Oferuje szeroką gamę pakietów dedykowanych różnym typom danych biologicznych, w tym danych z sekwencjonowania nowej generacji (NGS), mikromacierzy, proteomiki i wielu innych.
 
 **Główne cechy Bioconductora:**
 
