@@ -1,0 +1,155 @@
+# FastQC
+
+**FastQC** to popularne narzędzie bioinformatyczne służące do oceny jakości danych pochodzących z sekwencjonowania wysokoprzepustowego. Pozwala na szybkie i intuicyjne zidentyfikowanie potencjalnych problemów z danymi przed dalszą analizą.
+
+## Spis treści
+
+1. [Instalacja FastQC](#instalacja-fastqc)
+   - [Na systemie Linux](#na-systemie-linux)
+   - [Na systemie Windows](#na-systemie-windows)
+   - [Na systemie macOS](#na-systemie-macos)
+2. [Podstawowe użycie](#podstawowe-użycie)
+   - [Analiza pojedynczego pliku](#analiza-pojedynczego-pliku)
+   - [Analiza wielu plików](#analiza-wielu-plików)
+3. [Interpretacja wyników](#interpretacja-wyników)
+   - [Omówienie raportu](#omówienie-raportu)
+4. [Przykładowe zastosowania](#przykładowe-zastosowania)
+5. [Integracja z innymi narzędziami](#integracja-z-innymi-narzędziami)
+6. [Podsumowanie](#podsumowanie)
+
+---
+
+## Instalacja FastQC
+
+### Na systemie Linux
+
+1. **Pobierz najnowszą wersję** ze strony [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+   
+   ```bash
+   wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
+   ```
+
+2. **Rozpakuj archiwum**:
+
+   ```bash
+   unzip fastqc_v0.12.1.zip
+   ```
+
+3. **Przejdź do katalogu FastQC**:
+
+   ```bash
+   cd FastQC/
+   ```
+
+4. **Nadaj uprawnienia do uruchomienia**:
+
+   ```bash
+   chmod +x fastqc
+   ```
+
+5. **Opcjonalnie**: Dodaj FastQC do zmiennej środowiskowej `$PATH`:
+
+   ```bash
+   export PATH=$PATH:/ścieżka/do/FastQC/
+   ```
+
+### Na systemie Windows
+
+1. **Pobierz instalator** ze strony [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+
+2. **Rozpakuj archiwum ZIP** do wybranego folderu.
+
+3. **Uruchom FastQC** poprzez dwukrotne kliknięcie pliku `fastqc.exe`.
+
+### Na systemie macOS
+
+1. **Pobierz wersję dla macOS** ze strony [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+
+2. **Rozpakuj pobrane archiwum**.
+
+3. **Nadaj uprawnienia do uruchomienia**:
+
+   ```bash
+   chmod +x fastqc
+   ```
+
+4. **Uruchom FastQC** z terminala lub poprzez interfejs graficzny.
+
+## Podstawowe użycie
+
+### Analiza pojedynczego pliku
+
+Aby przeprowadzić analizę pojedynczego pliku FASTQ:
+
+```bash
+./fastqc próbka.fastq
+```
+
+Lub, jeśli FastQC jest w `$PATH`:
+
+```bash
+fastqc próbka.fastq
+```
+
+### Analiza wielu plików
+
+Możesz analizować wiele plików jednocześnie:
+
+```bash
+fastqc próbka1.fastq próbka2.fastq próbka3.fastq
+```
+
+Lub użyć symboli wieloznacznych:
+
+```bash
+fastqc *.fastq
+```
+
+## Interpretacja wyników
+
+Po zakończeniu analizy FastQC generuje dwa pliki dla każdej próbki:
+
+- **plik HTML** (`próbka_fastqc.html`) – interaktywny raport do przeglądania w przeglądarce internetowej.
+- **plik ZIP** (`próbka_fastqc.zip`) – zawiera szczegółowe dane i wykresy.
+
+### Omówienie raportu
+
+Raport FastQC składa się z kilku sekcji:
+
+1. **Per base sequence quality** – jakość odczytów w zależności od pozycji w sekwencji.
+2. **Per sequence quality scores** – ogólna jakość odczytów.
+3. **Per base sequence content** – skład nukleotydowy w zależności od pozycji.
+4. **Per sequence GC content** – zawartość GC w odczytach.
+5. **Per base N content** – częstość występowania niezidentyfikowanych nukleotydów (N).
+6. **Sequence Length Distribution** – rozkład długości odczytów.
+7. **Sequence Duplication Levels** – poziom duplikacji odczytów.
+8. **Overrepresented sequences** – nadreprezentowane sekwencje mogące wskazywać na zanieczyszczenia.
+9. **Adapter Content** – obecność sekwencji adapterów.
+
+Każda sekcja jest oznaczona kolorowym symbolem:
+
+- **Zielony (Pass)** – brak problemów.
+- **Żółty (Warning)** – potencjalne problemy.
+- **Czerwony (Fail)** – poważne problemy wymagające uwagi.
+
+## Przykładowe zastosowania
+
+- **Ocena jakości surowych danych** przed etapem filtracji i przycinania.
+- **Weryfikacja efektywności procesu przycinania** (np. usunięcie adapterów) poprzez porównanie raportów przed i po przycinaniu.
+- **Identyfikacja zanieczyszczeń** w próbkach, takich jak sekwencje adapterów czy kontaminacje bakteryjne.
+
+## Integracja z innymi narzędziami
+
+FastQC można zintegrować w potokach analitycznych:
+
+- **Programy do przycinania**: Wyniki FastQC mogą informować parametry narzędzi takich jak Trimmomatic czy Cutadapt.
+- **Systemy do zarządzania przepływem pracy**: Można użyć FastQC w ramach narzędzi takich jak Snakemake czy Nextflow.
+
+## Podsumowanie
+
+FastQC to niezbędne narzędzie w analizie danych sekwencjonowania, pozwalające na szybką ocenę jakości i identyfikację potencjalnych problemów. Regularne korzystanie z FastQC na różnych etapach analizy zapewnia wysoką jakość wyników i pomaga uniknąć błędów interpretacyjnych.
+
+**Przydatne linki:**
+
+- [Strona domowa FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [Dokumentacja FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/)
