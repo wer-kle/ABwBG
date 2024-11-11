@@ -1,5 +1,13 @@
 # Przycinanie (trimming) i filtrowanie danych NGS
 
+## **Zadanie 0: Wczytanie plików FASTQ
+
+```R
+library(ShortRead)
+fq_reads1 <- readFastq("/ścieżka/do/ecoli1_simulated.fq")
+fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
+```
+
 ## **Zadanie 1: Przycinanie odczytów na podstawie jakości**
 
 **Cel:** Nauka przycinania odczytów na podstawie wartości jakości baz.
