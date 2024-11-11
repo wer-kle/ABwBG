@@ -1,6 +1,6 @@
 # Przycinanie (trimming) i filtrowanie danych NGS
 
-## **Zadanie 0: Wczytanie plików FASTQ
+## Zadanie 0: Wczytanie plików FASTQ
 
 ```R
 library(ShortRead)
