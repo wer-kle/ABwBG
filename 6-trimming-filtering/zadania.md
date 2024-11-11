@@ -2,10 +2,10 @@
 
 ## Zadanie 0: Wczytanie plików FASTQ
 
-```R
+```{R}
 library(ShortRead)
-fq_reads1 <- readFastq("/ścieżka/do/ecoli1_simulated.fq")
-fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
+fq_reads1 <- readFastq("/Volumes/flashdrive/ecoli_simulated1_with_adapters.fq")
+fq_reads2 <- readFastq("/Volumes/flashdrive/ecoli_simulated2_with_adapters.fq")
 ```
 
 ## **Zadanie 1: Przycinanie odczytów na podstawie jakości**
@@ -16,20 +16,29 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 1. Przytnij bazy o niskiej jakości z końców odczytów:
 
-   ```R
-   # Przycinanie odczytów forward
+```{r}
+ # Przycinanie odczytów forward
    trimmed_reads1 <- trimTailw(fq_reads1, k = 2, a = "B", halfwidth = 1)
    
    # Przycinanie odczytów reverse
    trimmed_reads2 <- trimTailw(fq_reads2, k = 2, a = "B", halfwidth = 1)
-   ```
+```
+   
 
 2. Sprawdź, ile odczytów zostało przyciętych:
 
-   ```R
-   sum(width(trimmed_reads1) < width(fq_reads1))
-   sum(width(trimmed_reads2) < width(fq_reads2))
-   ```
+```{r}
+length(fq_reads1)
+length(trimmed_reads1)
+
+length(fq_reads2)
+length(trimmed_reads2)
+
+sum(width(trimmed_reads1) < width(fq_reads1))
+sum(width(trimmed_reads2) < width(fq_reads2))
+```
+
+**Uwaga**: komunikat ostrzegawczy 'Warning: longer object length is not a multiple of shorter object length' informuje o tym, że część odczytów została przycięta, a więc jest pożądany.
 
 **Zadanie do wykonania:**
 
@@ -47,17 +56,17 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 2. Filtrowanie odczytów:
 
-   ```R
+```{R}
    # Filtrowanie odczytów forward
    filtered_reads1 <- trimmed_reads1[width(trimmed_reads1) >= 50]
    
    # Filtrowanie odczytów reverse
    filtered_reads2 <- trimmed_reads2[width(trimmed_reads2) >= 50]
-   ```
+```
 
 3. Sprawdź liczbę odczytów przed i po filtracji:
 
-   ```R
+```{R}
    # Odczyty forward
    length(trimmed_reads1)       # Po przycinaniu
    length(filtered_reads1)      # Po filtracji
@@ -65,7 +74,7 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
    # Odczyty reverse
    length(trimmed_reads2)
    length(filtered_reads2)
-   ```
+```
 
 **Zadanie do wykonania:**
 
@@ -81,22 +90,24 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 1. Zapisz przetworzone odczyty do nowych plików FASTQ:
 
-   ```R
-   writeFastq(filtered_reads1, "ecoli_simulated1_processed.fq")
-   writeFastq(filtered_reads2, "ecoli_simulated2_processed.fq")
-   ```
+```{R}
+   writeFastq(filtered_reads1, "/Volumes/flashdrive/ecoli_simulated1_processed.fq")
+   writeFastq(filtered_reads2, "/Volumes/flashdrive/ecoli_simulated2_processed.fq")
+```
 
 2. Wygeneruj nowe raporty QC dla przetworzonych danych:
 
-   ```R
-   qa_results1_processed <- qa("ecoli_simulated1_processed.fq", type = "fastq")
-   report(qa_results1_processed, dest = "QA_report_read1_processed")
-   
-   qa_results2_processed <- qa("ecoli_simulated2_processed.fq", type = "fastq")
-   report(qa_results2_processed, dest = "QA_report_read2_processed")
-   ```
+```{R}
+qa_results1 <- qa("/Volumes/flashdrive/ecoli_simulated1_with_adapters.fq", type = "fastq")   
+qa_results1_processed <- qa( "/Volumes/flashdrive/ecoli_simulated1_processed.fq", type = "fastq")
+report(qa_results1, dest = "/Volumes/flashdrive/QA_report_read1")
+report(qa_results1_processed, dest = "/Volumes/flashdrive/QA_report_read1_processed")
 
-3. Porównaj raporty QC przed i po przetwarzaniu.
+qa_results2 <- qa("/Volumes/flashdrive/ecoli_simulated2_with_adapters.fq", type = "fastq")   
+qa_results2_processed <- qa("/Volumes/flashdrive/ecoli_simulated2_processed.fq", type = "fastq")
+report(qa_results2, dest = "/Volumes/flashdrive/QA_report_read2")
+report(qa_results2_processed, dest = "/Volumes/flashdrive/QA_report_read2_processed")
+```
 
 **Zadanie do wykonania:**
 
@@ -112,15 +123,20 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 1. Porównaj rozkład długości odczytów przed i po przycinaniu:
 
-   ```R
+```{R}
    # Przed przycinaniem (odczyty forward)
    hist(width(fq_reads1), breaks = 50, main = "Długość odczytów forward przed przycinaniem", xlab = "Długość (bp)")
    
    # Po przycinaniu (odczyty forward)
    hist(width(filtered_reads1), breaks = 50, main = "Długość odczytów forward po przycinaniu", xlab = "Długość (bp)")
    
-   # Powtórz dla odczytów reverse
-   ```
+   # Przed przycinaniem (odczyty reverse)
+   hist(width(fq_reads2), breaks = 50, main = "Długość odczytów reverse przed przycinaniem", xlab = "Długość (bp)")
+   
+   # Po przycinaniu (odczyty forward)
+   hist(width(filtered_reads2), breaks = 50, main = "Długość odczytów reverse po przycinaniu", xlab = "Długość (bp)")
+   
+```
 
 **Zadanie do wykonania:**
 
@@ -136,29 +152,49 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 1. Zdefiniuj sekwencję adaptera (np. dla Illumina):
 
-   ```R
+```{R}
+  library(Biostrings)
    adapter_seq <- DNAString("AGATCGGAAGAGC")
-   ```
+```
 
 2. Przytnij adaptery z odczytów:
 
-   ```R
-   # Przycinanie adapterów z odczytów forward
-   trimmed_reads1_adapt <- trimLRPatterns(Lpattern = adapter_seq, subject = sread(filtered_reads1))
-   filtered_reads1 <- ShortReadQ(sread = trimmed_reads1_adapt, quality = quality(filtered_reads1))
-   
-   # Przycinanie adapterów z odczytów reverse
-   trimmed_reads2_adapt <- trimLRPatterns(Lpattern = adapter_seq, subject = sread(filtered_reads2))
-   filtered_reads2 <- ShortReadQ(sread = trimmed_reads2_adapt, quality = quality(filtered_reads2))
-   ```
+```{R}
+
+# Przycinanie adapterów z odczytów forward:
+trimmed_reads1_adapt <- trimLRPatterns(
+  Lpattern = adapter_seq,
+  subject = filtered_reads1
+)
+
+# Defuniujemy odczyty po przycięciu adapterów:
+filtered_reads1 <- trimmed_reads1_adapt
+
+# Przycinanie adapterów z odczytów reverse:
+trimmed_reads2_adapt <- trimLRPatterns(
+  Lpattern = adapter_seq,
+  subject = filtered_reads2
+)
+
+# Defuniujemy odczyty po przycięciu adapterów:
+filtered_reads2 <- trimmed_reads2_adapt
+
+```
 
 3. Sprawdź efekty przycinania:
 
-   ```R
-   # Porównaj długości przed i po przycinaniu adapterów
+```{R}
+# Porównaj długości przed i po przycięciu adapterów
+length(filtered_reads1)
+length(trimmed_reads1)
+
+length(filtered_reads2)
+length(trimmed_reads2)
+
+# Sprawdź ile odczytów zostało zmodyfikowanych
    sum(width(filtered_reads1) < width(trimmed_reads1))
    sum(width(filtered_reads2) < width(trimmed_reads2))
-   ```
+```
 
 **Zadanie do wykonania:**
 
@@ -174,20 +210,20 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 1. Zapisz odczyty po usunięciu adapterów:
 
-   ```R
-   writeFastq(filtered_reads1, "ecoli_simulated1_final.fq")
-   writeFastq(filtered_reads2, "ecoli_simulated2_final.fq")
-   ```
+```{R}
+   writeFastq(filtered_reads1, "/Volumes/flashdrive/ecoli_simulated1_final.fq")
+   writeFastq(filtered_reads2, "/Volumes/flashdrive/ecoli_simulated2_final.fq")
+```
 
 2. Wygeneruj ostateczne raporty QC:
 
-   ```R
-   qa_results1_final <- qa("ecoli_simulated1_final.fq", type = "fastq")
-   report(qa_results1_final, dest = "QA_report_read1_final")
+```{R}
+   qa_results1_final <- qa("/Volumes/flashdrive/ecoli_simulated1_final.fq", type = "fastq")
+   report(qa_results1_final, dest = "/Volumes/flashdrive/QA_report_read1_final")
    
-   qa_results2_final <- qa("ecoli_simulated2_final.fq", type = "fastq")
-   report(qa_results2_final, dest = "QA_report_read2_final")
-   ```
+   qa_results2_final <- qa("/Volumes/flashdrive/ecoli_simulated2_final.fq", type = "fastq")
+   report(qa_results2_final, dest = "/Volumes/flashdrive/QA_report_read2_final")
+```
 
 3. Porównaj raporty QC przed i po usunięciu adapterów.
 
@@ -219,7 +255,7 @@ fq_reads2 <- readFastq("/ścieżka/do/ecoli2_simulated.fq")
 
 ## **Podsumowanie**
 
-Przeprowadziłaś pełny proces kontroli jakości oraz przycinania i filtracji danych NGS z wykorzystaniem symulowanych odczytów **Escherichia coli**. Dzięki temu mogłaś praktycznie przećwiczyć:
+Przeprowadziliśmy pełny proces kontroli jakości oraz przycinania i filtracji danych NGS z wykorzystaniem symulowanych odczytów **Escherichia coli**. Dzięki temu przećwiczyliśmy w praktyce:
 
 - Wczytywanie i podstawową analizę danych sekwencyjnych w R.
 - Generowanie i interpretację raportów QC.
