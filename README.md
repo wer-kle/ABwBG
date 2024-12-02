@@ -77,6 +77,12 @@ Po ukończeniu przedmiotu student będzie potrafił:
     - **Ćwiczenie:** Rozwiązanie zadań praktycznych w R i Bioconductor.
 
 ### **Zajęcia 9 (3 grudnia 2024)**
+- **Temat:** Wykrywanie warinatów (Variant Calling)
+- **Zakres i cele:**
+- - Zapoznanie się z podstawami wykrywania wariantów genetycznych (SNPs i indels).
+- - Nauka korzystania z pakietu `VariantTools` do detekcji wariantów.
+
+### **Zajęcia 10 (10 grudnia 2024)**
 
 - **Prowadzący:** dr Marlena Wojciechowska
 - **Temat:** Analiza danych z mikromacierzy w programie GenomeStudio.
@@ -85,18 +91,29 @@ Po ukończeniu przedmiotu student będzie potrafił:
   - **Program GenomeStudio:** Przegląd funkcjonalności, import i analiza danych.
     - **Ćwiczenie:** Praktyczna analiza danych mikromacierzowych w GenomeStudio.
 
-### **Zajęcia 10-14 (10 grudnia 2024 – 21 stycznia 2025)**
+### **Zajęcia 11 (17 grudnia 2024)**
 
-- **Temat:** Analiza downstream (GWAS, Variant Calling itp.).
+- **Temat:** Analiza asocjacji genomowej (GWAS).
 - **Zakres i cele:**
-  - **Wykrywanie wariantów (Variant Calling):** Omówienie metod detekcji SNPs i indels.
-    - **Ćwiczenie:** Użycie pakietu `VariantTools` lub `GATK` (dla chętnych z użyciem bash) do wykrywania wariantów.
-  - **Analiza asocjacji genomowej (GWAS):** Wprowadzenie do GWAS, przygotowanie danych, analiza statystyczna.
-    - **Ćwiczenie:** Praca z pakietami `snpStats` lub `GenABEL`.
-  - **Anotacja wariantów:** Interpretacja biologiczna wykrytych wariantów.
-    - **Ćwiczenie:** Użycie pakietów `VariantAnnotation` i `biomaRt`.
-  - **Wizualizacja wyników:** Tworzenie wykresów typu Manhattan, Q-Q.
-    - **Ćwiczenie:** Wykorzystanie pakietów `qqman` lub `ggplot2`.
+  - Zrozumienie podstaw teoretycznych GWAS.
+  - Nauka przygotowania danych i przeprowadzenia analizy statystycznej.
+  - Praktyczne zastosowanie pakietów `snpStats` lub `GenABEL`.
+
+### **Zajęcia 12 (7 stycznia 2025)**
+
+- **Temat:** Anotacja wariantów
+- **Zakres i cele:**
+  - Zrozumienie znaczenia anotacji wariantów.
+  - Nauka interpretacji biologicznej wykrytych wariantów.
+  - Praktyczne zastosowanie pakietów `VariantAnnotation` i `biomaRt`.
+
+### **Zajęcia 13 (14 stycznia 2025)**
+
+- **Temat:** Wizualizacja wyników
+- **Zakres i cele:**
+  - Zapoznanie się z technikami wizualizacji danych genomowych.
+  - Nauka tworzenia wykresów typu Manhattan i Q-Q.
+  - Praktyczne zastosowanie pakietów `qqman` i `ggplot2`.
 
 *Terminy zajęć:*
 - **Zajęcia 10:** 10 grudnia 2024
