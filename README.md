@@ -115,14 +115,6 @@ Po ukończeniu przedmiotu student będzie potrafił:
   - Nauka tworzenia wykresów typu Manhattan i Q-Q.
   - Praktyczne zastosowanie pakietów `qqman` i `ggplot2`.
 
-*Terminy zajęć:*
-- **Zajęcia 10:** 10 grudnia 2024
-- **Zajęcia 11:** 17 grudnia 2024
-- *Przerwa świąteczna*
-- **Zajęcia 12:** 7 stycznia 2025
-- **Zajęcia 13:** 14 stycznia 2025
-- **Zajęcia 14:** 21 stycznia 2025
-
 ### **Zajęcia 14 (21 stycznia 2025)**
 
 - **Temat:** Kolokwium z zajęć 9-14.
