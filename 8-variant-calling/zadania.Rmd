@@ -1,0 +1,278 @@
+# Variant Calling w R
+---
+
+## Zadanie 1: Instalacja i załadowanie niezbędnych pakietów
+
+Zainstaluj (jeżeli jest to konieczne) i załaduj następujące pakiety z `Bioconductor`: `VariantTools`, `Rsamtools`, `GenomicRanges`, `GenomicFeatures`, `VariantAnnotation`, `BiocParallel`.
+
+**Instrukcje:**
+
+```{R}
+# Instalacja menedżera pakietów Bioconductor (jeśli nie jest zainstalowany)
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+```
+
+```{r Instalacja pakietów}
+BiocManager::install(c("VariantTools", "Rsamtools", "GenomicRanges", "GenomicFeatures", "VariantAnnotation", "BiocParallel"))
+```
+
+```{r Załadowanie pakietów}
+library(VariantTools)
+library(Rsamtools)
+library(GenomicRanges)
+library(GenomicFeatures)
+library(VariantAnnotation)
+library(BiocParallel)
+```
+
+---
+
+## Zadanie 2: Zapoznanie się z pakietami do wykrywania wariantów
+
+Jakie są najważniejsze funkcje pakietów zainstalowanych w zadaniu 1? Skorzystaj z internetu lub z funkcji pomocowych.
+
+**Instrukcje:**
+
+1. Wyświetl pomoc dla pakietu `VariantTools`:
+
+```{R}
+??VariantTools
+```
+
+2. Przeczytaj wprowadzenie do pakietu:
+
+```{R}
+vignette("VariantTools")
+```
+
+3. Zapoznaj się z kluczowymi funkcjami innych pakietów:
+
+    - `Rsamtools`: funkcje do pracy z plikami BAM/SAM.
+    - `GenomicRanges`: operacje na zakresach genomowych.
+    - `GenomicFeatures`: tworzenie obiektów opisujących cechy genomu.
+    - `VariantAnnotation`: funkcje do anotacji i manipulacji wariantami.
+
+---
+
+## Zadanie 3: Konfiguracja środowiska pracy
+
+Ustaw katalog roboczy i sprawdź dostępność danych.
+
+**Instrukcje:**
+
+1. Ustaw katalog roboczy:
+
+```{R}
+setwd("/sciezka/do/katalogu")
+```
+
+2. Sprawdź, czy pliki są dostępne:
+
+```{R}
+list.files()
+```
+
+Upewnij się, że w katalogu znajdują się:
+
+- Plik BAM z odczytami (`aligned_sample.BAM`)
+- Genom referencyjny w formacie FASTA (`ecoli_reference.fasta`)
+
+---
+
+## Zadanie 4: Wczytanie danych
+
+Wczytaj plik BAM i genom referencyjny. Zindeksuj plik FASTA.
+
+**Instrukcje:**
+
+1. Wczytaj plik BAM:
+
+```{R}
+bamfile <- "ścieżka/do/pliku/aligned_sample.BAM"
+bam <- BamFile(bamfile)
+```
+
+2. Wczytaj genom referencyjny:
+
+```{R}
+ref_genome <- "ścieżka/do/pliku/ecoli_reference.fasta"
+fa <- FaFile(ref_genome)
+```
+
+
+3. Przesortuj plik BAM według współrzędnych
+
+```{r}
+# Zdefiniuj ścieżkę wejściową i wyjściową
+input_bam <- "ścieżka/do/pliku/aligned_sample.BAM"
+output_bam <- "ścieżka/do/pliku/sorted_aligned_sample.BAM"
+
+# Wykonaj sortowanie
+sortBam(file = input_bam, destination = output_bam, overwrite = TRUE)
+
+#Zdefiniuj przesortowany plik
+sorted_bam <- "ścieżka/do/pliku/sorted_aligned_sample.BAM.bam"    
+```
+
+4. Indeksuj plik FASTA, jeśli indeks nie istnieje, oraz przesortowany plik BAM:
+
+```{R}
+indexFa(ref_genome)
+indexBam(sorted_bam)
+```
+
+---
+
+## Zadanie 5: Kontrola jakości danych sekwencyjnych
+
+Przeprowadź podstawową kontrolę jakości danych sekwencyjnych przed wykrywaniem wariantów.
+
+**Instrukcje:**
+
+1. Sprawdź nagłówek pliku BAM:
+
+```{R}
+scanBamHeader(bam)
+```
+
+2. Sprawdź podstawowe statystyki pliku BAM:
+
+```{R}
+idxstats <- idxstatsBam(sorted_bam)
+print(idxstats)
+```
+
+3. Oblicz i opcjonalnie zwizualizuj pokrycie genomu:
+
+```{R}
+coverage_data <- coverage(sorted_bam)
+summary(coverage_data[[1]]) # dla genomów prokariota
+```
+
+```{r}
+plot(coverage_data[[1]], main="Pokrycie genomu dla sekwencji U00096.3", ylab="Pokrycie", xlab="Pozycja w genomie") # uwaga: zajmuje dużo czasu
+
+```
+
+---
+
+## Zadanie 6: Wykrywanie wariantów
+
+Wykryj warianty za pomocą funkcji `callVariants()`.
+
+**Instrukcje:**
+
+1. Zdefiniuj parametry skanowania za pomocą `pileup()` z pakietu `Rsamtools`.
+
+```{R}
+# Ustaw parametry pileup
+pileup_param <- PileupParam(
+    distinguish_strands = FALSE,
+    distinguish_nucleotides = TRUE,
+    min_base_quality = 20
+)
+
+# Wykonaj pileup
+pile <- pileup(sorted_bam, scanBamParam = ScanBamParam(), pileupParam = pileup_param)
+
+```
+
+2. Konwertuj dane pileup do ramki danych z uzgodnieniem nazw sekwencji
+
+```{r}
+library(dplyr)
+
+pile_df <- pile_df %>%
+    mutate(seqnames = as.character(seqnames)) %>%
+    mutate(seqnames = ifelse(seqnames == "U00096.3", "NC_000913.3", seqnames))
+
+```
+
+3. Pogrupuj dane według pozycji - czekamy cierpliwie!
+```{r}
+variant_candidates <- pile_df %>%
+    group_by(seqnames, pos) %>%
+    summarise(
+        total = sum(count),
+        A = sum(count[nucleotide == "A"]),
+        C = sum(count[nucleotide == "C"]),
+        G = sum(count[nucleotide == "G"]),
+        T = sum(count[nucleotide == "T"]),
+        .groups = 'drop'
+    ) %>%
+    mutate(
+        ref = as.character(getSeq(fa, GRanges(seqnames, IRanges(pos, pos))))
+    ) %>%
+    rowwise() %>%
+    mutate(
+        # Obliczanie alternatywnych alleli
+        alt_alleles = list(setdiff(c("A", "C", "G", "T"), ref)),
+        # Liczenie odczytów dla referencyjnego i alternatywnych alleli
+        ref_count = sum(c_across(c("A", "C", "G", "T"))[ref]),
+        alt_count = sum(c_across(c("A", "C", "G", "T"))[alt_alleles])
+    ) %>%
+    ungroup() %>%
+    # Filtracja na podstawie minimalnej liczby odczytów dla wariantu
+    filter(alt_count >= 5) %>%
+    # Opcjonalne filtrowanie na podstawie proporcji
+    filter((alt_count / total) >= 0.2)
+
+```
+
+```{r}
+# Przykład wyświetlenia wariantów
+head(variant_candidates)
+```
+
+---
+
+## Zadanie 7: Filtracja i eksportowanie wyników do pliku
+
+```{r}
+# Filtracja wariantów na podstawie jakości i głębokości pokrycia
+filtered_variants <- variant_candidates %>%
+    filter(total >= 10, alt_count / total >= 0.2, alt_count >= 5)
+
+# Wyświetlenie liczby wariantów przed i po filtrowaniu
+cat("Liczba wariantów przed filtrowaniem:", nrow(variant_candidates), "\n")
+cat("Liczba wariantów po filtrowaniu:", nrow(filtered_variants), "\n")
+
+# Konwersja do data.frame dla eksportu
+df_variants <- as.data.frame(filtered_variants)
+
+# Eksport do pliku CSV
+write.csv(df_variants, "ścieżka/do/pliku/wyniki_wariantow.csv", row.names = FALSE)
+```
+---
+
+## Zadanie 10: Podsumowanie i dyskusja
+
+**Pytania do refleksji:**
+
+1. **Jakie czynniki mogą wpływać na dokładność wykrywania wariantów?**
+
+    - Jakość danych sekwencyjnych.
+    - Głębokość pokrycia.
+    - Użyte parametry w procesie variant calling.
+    - Błędy w mapowaniu odczytów do genomu referencyjnego.
+
+2. **Dlaczego filtrowanie wariantów jest istotne?**
+
+    - Usuwa fałszywie pozytywne warianty.
+    - Poprawia wiarygodność wyników.
+    - Skupia analizę na najbardziej istotnych biologicznie wariantach.
+
+3. **Jakie są potencjalne źródła błędów w procesie variant calling?**
+
+    - Błędy sekwencjonowania.
+    - Niewłaściwe mapowanie odczytów.
+    - Artefakty PCR.
+    - Zanieczyszczenia próbek.
+
+4. **Jakie są kolejne kroki po wykryciu wariantów?**
+
+    - Anotacja wariantów (będzie tematem kolejnych zajęć).
+    - Analiza funkcjonalna.
+    - Interpretacja kliniczna (jeśli dotyczy).
+---
